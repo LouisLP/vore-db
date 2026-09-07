@@ -50,4 +50,4 @@ Nothing in the database stops a tag from being secretly taxonomic, or a category
 
 A category page must show its own items and its descendants' — one recursive CTE, not two queries.
 
-The `item` columns above are only the ones this decision fixes. Id type, audit columns and slug conventions (map #1, "Table conventions" and "Stable identity"), origin (ADR-0001, ADR-0002), names and aliases (#4) and media (#5) all add to this table.
+The `item` columns above are only the ones this decision fixes. Id type, audit columns and slug conventions (map #1, "Table conventions" and "Stable identity"), origin (ADR-0001, ADR-0002), names and aliases (ADR-0004) and media (#5) all add to this table.

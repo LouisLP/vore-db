@@ -35,6 +35,25 @@ A family of related Tags — diet, preparation, texture, occasion. Every Tag bel
 **Category versus Tag**:
 A Category says what an Item *is*: required, exactly one. A Tag says what an Item is *also true of*: optional, many. A concept that could plausibly be either is a Tag — that is what keeps the taxonomy a taxonomy. An Item with genuine dual nature is categorised where a reader would look for it and tagged for the other reading: gin is a Drink, tagged `ingredient`.
 
+**Name**:
+The one canonical English display name of an Item — "eggplant", "pad thai". Every Item has exactly one, and it is what a list, card or page shows.
+_Avoid_: Title, label, display name
+
+**Alias**:
+Any other name an Item goes by — the native script ("寿司"), a romanisation ("sushi"), a regional synonym ("aubergine"), a historical name. An Item may carry any number, including none. An Alias never restates the Item's Name, but two different Items may share one.
+_Avoid_: Synonym (that is one kind of Alias), alternate name, translation
+
+**Name kind**:
+What sort of Alias a row is. Exactly four are recognised:
+
+- **Native** — the name in its own script: 寿司, 김치.
+- **Romanisation** — that name in Latin script: sushi, kimchi.
+- **Synonym** — another name in the same language, including regional spellings: aubergine.
+- **Historical** — a name the Item was formerly known by.
+
+**Language tag**:
+The language an Alias is in, written as a BCP 47 tag — `ja`, `ja-Latn`, `en-GB`. Optional: a romanisation, or a name in circulation across several languages, may have none. Region lives here rather than in Country: "aubergine" is `en-GB`, which says nothing about where the Item comes from.
+
 **Country**:
 A sovereign state or territory as listed in ISO 3166-1. The only geographic unit in the model.
 _Avoid_: Nation, region, place, locale
@@ -61,5 +80,9 @@ _Avoid_: Main country, home country, default country
 **Historical states** are not modelled. An Item from a vanished state is attributed to the modern Countries that succeeded it.
 
 **Facet categories** are not modelled. A cross-cutting fact like "fermented" or "vegan" is a Tag, never a Category, and the taxonomy has no `diet` or `preparation` Root. The two mechanisms are kept apart so the question "is this a Category or a facet" does not have to be re-answered per Item.
+
+**A translated encyclopedia** is not modelled. vore-db records the world's names as data — that is what Aliases are — but the encyclopedia itself is written in English. Descriptions and the names of Categories, Tags and Tag groups are single English columns with no translation tables and no locale resolution. A localised interface would be a new effort, not a widening of Alias.
+
+**Scientific names** are not Aliases. *Solanum melongena* is a fact about a species, not something people call the food, so it belongs with an Item's other attributes rather than in its names.
 
 **Universal ingredients** — water, salt, plain sugar — are not Items. An Item that cannot be associated with any Country does not belong in this encyclopedia.
