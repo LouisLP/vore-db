@@ -56,4 +56,6 @@ The same photograph illustrating two items is two rows. Uniqueness on `url` is s
 
 Video and audio are deliberately absent. Nothing in the model anticipates them, and when they arrive the question of whether they even hang off `item` should be asked with real requirements rather than pre-answered by a column.
 
+`alt_text` and `caption` are prose, and ADR-0004 settles that the encyclopedia's own prose is English — so they are single English columns like `item.description`, with no per-language variants. `item_name` exists for the world's names; there is no equivalent for an image's caption, and a localised interface would have to add one deliberately.
+
 The `item_image` id type and audit columns are not fixed here — they follow whatever map #1's "Table conventions" settles, as for every other table.

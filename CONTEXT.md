@@ -95,18 +95,18 @@ _Avoid_: Origin, provenance, referrer
 
 ## Deliberately absent
 
-**Self-hosted media** is not modelled. The schema holds references to files hosted elsewhere and never the files themselves — there is no storage key, no checksum, no size or dimensions, and no upload path.
-
-**Video and audio** are not modelled. An Image is the only kind of media an Item carries, and the table is named for what it holds. If another kind is ever needed, whether it even hangs off an Item is a question to ask then.
-
 **Cuisine** and **culinary region** are not modelled. "Cantonese" is expressed as China; "Levantine" as Lebanon, Syria and Jordan together. If a culinary axis is ever needed it will be a new concept, not a widening of Country.
 
 **Historical states** are not modelled. An Item from a vanished state is attributed to the modern Countries that succeeded it.
 
 **Facet categories** are not modelled. A cross-cutting fact like "fermented" or "vegan" is a Tag, never a Category, and the taxonomy has no `diet` or `preparation` Root. The two mechanisms are kept apart so the question "is this a Category or a facet" does not have to be re-answered per Item.
 
-**A translated encyclopedia** is not modelled. vore-db records the world's names as data — that is what Aliases are — but the encyclopedia itself is written in English. Descriptions and the names of Categories, Tags and Tag groups are single English columns with no translation tables and no locale resolution. A localised interface would be a new effort, not a widening of Alias.
+**A translated encyclopedia** is not modelled. vore-db records the world's names as data — that is what Aliases are — but the encyclopedia itself is written in English. Descriptions, the names of Categories, Tags and Tag groups, and an Image's alt text and caption are single English columns with no translation tables and no locale resolution. A localised interface would be a new effort, not a widening of Alias.
 
 **Scientific names** are not Aliases. *Solanum melongena* is a fact about a species, not something people call the food, so it belongs with an Item's other attributes rather than in its names.
+
+**Self-hosted media** is not modelled. The schema holds references to files hosted elsewhere and never the files themselves — there is no storage key, no checksum, no size or dimensions, and no upload path.
+
+**Video and audio** are not modelled. An Image is the only kind of media an Item carries, and the table is named for what it holds. If another kind is ever needed, whether it even hangs off an Item is a question to ask then.
 
 **Universal ingredients** — water, salt, plain sugar — are not Items. An Item that cannot be associated with any Country does not belong in this encyclopedia.
