@@ -8,6 +8,33 @@ A reference encyclopedia of the world's foods and drinks. One row is one canonic
 A canonical food or drink — "pad thai", "gochujang", "negroni", "eggplant". Not a brand, not a manufactured product, not a recipe.
 _Avoid_: Food, product, entry, record
 
+**Category**:
+A node in the single taxonomy that answers "what kind of thing is this". Every Item sits at exactly one; everything broader is implied by that Category's ancestors.
+_Avoid_: Type, class, group, section
+
+**Root**:
+One of the three top-level Categories — Dish, Ingredient, Drink. An Item's Root is the broadest true statement about it, and the three are the encyclopedia's front doors.
+
+**Dish**:
+A prepared thing consumed as itself — pad thai, laksa, negroni. One of the three Roots.
+
+**Ingredient**:
+A thing used to make something else, catalogued in its own right — eggplant, gochujang. One of the three Roots.
+
+**Drink**:
+A thing consumed by drinking — negroni, gin. One of the three Roots, not a property of an Item.
+_Avoid_: Beverage
+
+**Tag**:
+A cross-cutting fact about an Item that is not what the Item *is* — "fermented", "vegan", "street food". An Item may carry any number, including none.
+_Avoid_: Label, attribute, flag, facet
+
+**Tag group**:
+A family of related Tags — diet, preparation, texture, occasion. Every Tag belongs to exactly one, so filtering can be presented family by family.
+
+**Category versus Tag**:
+A Category says what an Item *is*: required, exactly one. A Tag says what an Item is *also true of*: optional, many. A concept that could plausibly be either is a Tag — that is what keeps the taxonomy a taxonomy. An Item with genuine dual nature is categorised where a reader would look for it and tagged for the other reading: gin is a Drink, tagged `ingredient`.
+
 **Country**:
 A sovereign state or territory as listed in ISO 3166-1. The only geographic unit in the model.
 _Avoid_: Nation, region, place, locale
@@ -32,5 +59,7 @@ _Avoid_: Main country, home country, default country
 **Cuisine** and **culinary region** are not modelled. "Cantonese" is expressed as China; "Levantine" as Lebanon, Syria and Jordan together. If a culinary axis is ever needed it will be a new concept, not a widening of Country.
 
 **Historical states** are not modelled. An Item from a vanished state is attributed to the modern Countries that succeeded it.
+
+**Facet categories** are not modelled. A cross-cutting fact like "fermented" or "vegan" is a Tag, never a Category, and the taxonomy has no `diet` or `preparation` Root. The two mechanisms are kept apart so the question "is this a Category or a facet" does not have to be re-answered per Item.
 
 **Universal ingredients** — water, salt, plain sugar — are not Items. An Item that cannot be associated with any Country does not belong in this encyclopedia.
