@@ -13,7 +13,7 @@
 | `drizzle-seed` | **0.3.1** | `latest`. |
 | PostgreSQL (test target) | **18.1** | `postgres:18.1-alpine` |
 
-> **File location note.** The repo was empty when this was written, so there is no existing docs convention. `docs/research/<topic>.md` is a choice made here, not an inherited one.
+> **File location note.** The research ran against an empty repo; by the time it landed, `main` had grown a `CONTEXT.md` + `docs/adr/` layout (the domain-docs convention). This is findings, not a decision record, so it sits at `docs/research/<topic>.md` as a sibling of `docs/adr/` rather than becoming an ADR.
 
 > **How claims were verified.** Everything marked "verified" below was reproduced locally against `drizzle-orm@0.45.2` / `drizzle-kit@0.31.10` and a throwaway `postgres:18.1-alpine` container: real `drizzle-kit generate` output, real `psql` execution, real relational queries. Everything else is cited to a primary doc page. Anything I could not confirm from either is marked **unverified**.
 
@@ -59,6 +59,8 @@ Actionable answers, no body-reading required.
 5. **The programmatic `migrate()` wraps ALL pending migrations in one transaction** (verified in the shipped `drizzle-orm/pg-core/dialect.cjs` source). Combined with Postgres's rule that *"If `ALTER TYPE … ADD VALUE` … is executed inside a transaction block, the new value cannot be used until after the transaction has been committed"* ([PG ALTER TYPE](https://www.postgresql.org/docs/current/sql-altertype.html)), an "add enum value" migration and a later data migration that *uses* it cannot ship in the same `migrate` run. Verified in psql: `ERROR: unsafe use of new value "drink" of enum type item_kind`.
 6. **Postgres cannot drop an enum value at all.** The `ALTER TYPE` reference documents only `ADD VALUE` and `RENAME VALUE` for enums; there is no `DROP VALUE` ([PG ALTER TYPE](https://www.postgresql.org/docs/current/sql-altertype.html)). This is a Postgres constraint, not a Drizzle one — no ORM can fix it.
 7. **The relational query API has no recursive traversal.** `with: { children: { with: { children: … } } }` only goes as deep as you literally type. Arbitrary-depth subtree queries need a raw recursive CTE via `db.execute(sql\`with recursive …\`)` (verified working).
+
+> **Corroboration.** [ADR-0003](../adr/0003-item-shape-and-taxonomy.md), accepted independently while this research ran, reaches the same two calls on its own reasoning: an adjacency-list `category` tree rather than `ltree`, and a category FK rather than a `kind` enum. Nothing found here argues against it — the gate is clear.
 
 **Bottom line for the taxonomy decision:** a `pgEnum` category is a decision to revisit the first time a category is renamed or retired. Use a **`categories` lookup table with an FK** — it is fully expressible in Drizzle, and renaming a category becomes a one-row `UPDATE` instead of a hand-edited destructive migration.
 
@@ -761,7 +763,9 @@ Why it wins here: the data *is* the content (a reference encyclopedia's rows are
 
 7. **Seed with a plain `db.insert()` script.** See §7.
 
-8. **Pin `drizzle-orm@0.45.2` and `drizzle-kit@0.31.10` exactly, and put a note next to the pin** saying the docs site describes v1. Do not upgrade to `1.0.0-rc.*` on this project until v1 is `latest` — RQBv1 is removed in v1, so the relations file in §5 has to be rewritten, and whether v1's `through()` can project junction payload is unverified.
+8. **Do not upgrade to `1.0.0-rc.*` until v1 is `latest`.** RQBv1 is removed in v1, so the relations file in §5 has to be rewritten, and whether v1's `through()` can project junction payload is unverified.
+
+   `backend/package.json` currently carries `^0.45.2` / `^0.31.10`. That is already safe against the v1 jump — npm caret ranges on a `0.x` version are restricted to that minor (`>=0.45.2 <0.46.0`), so the caret cannot reach `1.0.0` on its own. Exact pins would buy a little more reproducibility, but the important thing is a comment next to the dep saying **the docs site documents v1 while this is v0**.
 
 ---
 
