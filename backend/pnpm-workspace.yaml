@@ -1,0 +1,4 @@
+# pnpm 11 reads settings from here rather than the "pnpm" field in package.json.
+# drizzle-kit and tsx ship esbuild, whose postinstall installs the platform binary.
+allowBuilds:
+  esbuild: true
