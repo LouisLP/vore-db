@@ -73,7 +73,31 @@ What an Item's association with a Country means. Exactly three are recognised:
 The single Country shown first when an Item is displayed. Optional — an Item shared between Countries on equal footing, like ćevapi or hummus, has none.
 _Avoid_: Main country, home country, default country
 
+**Image**:
+A picture of an Item, held as a reference to a file hosted elsewhere. This project stores no files of its own — an Image is a URL, an alt text, and what is known about where it came from. An Item may have any number, including none.
+_Avoid_: Photo, media, asset, thumbnail
+
+**Primary image**:
+The Image shown first when an Item is displayed — the first in the Item's ordering, not a separately flagged row. Unlike a Primary country, it is never absent unless the Item has no Images at all.
+_Avoid_: Main image, hero, cover
+
+**Attribution**:
+The credit line an Image's Licence obliges a display to print — who made the picture. Distinct from the Licence itself, which says whether a credit is owed at all.
+_Avoid_: Credit, byline, author, source
+
+**Licence**:
+The terms an Image is published under, named by its standard code and drawn from a closed list. Optional on an Image, but an Image without one is not publishable.
+_Avoid_: License, rights, terms, copyright
+
+**Source page**:
+The page an Image was taken from — a Wikimedia Commons file page, say — as opposed to the address of the file itself. It is where the Licence and Attribution can be re-verified, and what a credit links to.
+_Avoid_: Origin, provenance, referrer
+
 ## Deliberately absent
+
+**Self-hosted media** is not modelled. The schema holds references to files hosted elsewhere and never the files themselves — there is no storage key, no checksum, no size or dimensions, and no upload path.
+
+**Video and audio** are not modelled. An Image is the only kind of media an Item carries, and the table is named for what it holds. If another kind is ever needed, whether it even hangs off an Item is a question to ask then.
 
 **Cuisine** and **culinary region** are not modelled. "Cantonese" is expressed as China; "Levantine" as Lebanon, Syria and Jordan together. If a culinary axis is ever needed it will be a new concept, not a widening of Country.
 
