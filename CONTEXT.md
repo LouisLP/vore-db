@@ -39,6 +39,10 @@ A Category says what an Item *is*: required, exactly one. A Tag says what an Ite
 The one canonical English display name of an Item — "eggplant", "pad thai". Every Item has exactly one, and it is what a list, card or page shows.
 _Avoid_: Title, label, display name
 
+**Slug**:
+The stable public handle for an Item, Category, Tag or Tag group — `pad-thai`, `fermented-paste`. Lowercase, hyphenated, unique, and authored rather than derived from the Name, so that renaming "eggplant" to "aubergine" does not break the address. It is what a URL references; database ids never appear in one.
+_Avoid_: Key, handle, permalink, id
+
 **Alias**:
 Any other name an Item goes by — the native script ("寿司"), a romanisation ("sushi"), a regional synonym ("aubergine"), a historical name. An Item may carry any number, including none. An Alias never restates the Item's Name, but two different Items may share one.
 _Avoid_: Synonym (that is one kind of Alias), alternate name, translation
