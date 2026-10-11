@@ -40,7 +40,7 @@ The one canonical English display name of an Item — "eggplant", "pad thai". Ev
 _Avoid_: Title, label, display name
 
 **Slug**:
-The stable public handle for an Item, Category, Tag or Tag group — `pad-thai`, `fermented-paste`. Lowercase, hyphenated, unique, and authored rather than derived from the Name, so that renaming "eggplant" to "aubergine" does not break the address. It is what a URL references; database ids never appear in one.
+The stable public handle for an Item, Category, Tag or Tag group — `pad-thai`, `fermented-paste`. Lowercase, hyphenated, unique, and authored rather than derived from the Name, so that renaming "eggplant" to "aubergine" does not break the address. An imported Item's Slug is proposed once from its Name, when the Item is first drawn in, and is a human's to change from then on. It is what a URL references; database ids never appear in one.
 _Avoid_: Key, handle, permalink, id
 
 **Alias**:
