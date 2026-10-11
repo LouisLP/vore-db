@@ -31,7 +31,8 @@ URL 404s after a rename, but the page id survives it, so a re-run refreshes `url
 `commons_page_id`. Aliases are matched within their Item on `lower(value)`, the way the
 existing unique index already treats them. Countries are keyed by ISO code, and the Import
 maps Wikidata's country QIDs to codes in code. Categories and Tags are mapped from Wikidata
-classes to Slugs in the Import's configuration.
+classes to Slugs on the taxonomy's own nodes (amended by ADR-0010; first placed in the
+Import's configuration).
 
 **Checked-in files are the source of truth, and the database is their projection.** There
 is no editing UI. A human edits the catalogue by changing `seed.ts` or an Import's batch
