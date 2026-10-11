@@ -98,7 +98,7 @@ The page an Image was taken from — a Wikimedia Commons file page, say — as o
 _Avoid_: Origin, provenance, referrer
 
 **External id**:
-An identifier another project uses for the same thing an Item describes — Wikidata's `Q1052` for sushi. It records where an Item's facts were drawn from and lets a later Import recognise the Item again. Never the Item's identity and never its public handle; that is the Slug.
+An identifier another project uses for the same thing an Item describes — Wikidata's `Q1052` for sushi. It records where an Item's facts were drawn from and lets a later Import recognise the Item again. An Item may carry several, when two of another project's entries are one Item here, and once any Item carries an id, no Import proposes it again. Never the Item's identity and never its public handle; that is the Slug.
 _Avoid_: Provenance, source, foreign key, reference
 
 **Import**:
@@ -122,7 +122,7 @@ Whether a candidate Item in a Batch has been accepted by the reviewer. Only an a
 _Avoid_: Status, approval, published
 
 **Rejection list**:
-The External ids a human has decided are not Items. Each one is either a candidate turned down in review or an Item that was later deleted, and each carries a reason. No Import proposes an id that is on it.
+The External ids a human has decided are not Items. Each one is either a candidate turned down in review or an Item that was later deleted, and each carries a reason. No Import proposes an id that is on it. An id merged into another Item is not rejected, because it is still an Item. It joins that Item's External ids instead.
 _Avoid_: Blocklist, tombstone, ignore list
 
 ## Deliberately absent
