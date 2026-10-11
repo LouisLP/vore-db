@@ -1,0 +1,22 @@
+{
+  "status": "present",
+  "slug": "matcha",
+  "name": "Matcha",
+  "category": "infusion",
+  "drafted": ["description", "category"],
+  "description": "Green tea leaves shade-grown, steamed, dried and stone-ground to a fine powder, then whisked into hot water rather than steeped, so the whole leaf is drunk.",
+  "countries": [{ "code": "CN", "role": "origin", "primary": true }],
+  "names": [{ "value": "抹茶", "kind": "native", "lang": "ja" }],
+  "tags": ["caffeinated"],
+  "images": [
+    {
+      "commonsPageId": 75618459,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Matcha_Scoop.jpg/960px-Matcha_Scoop.jpg",
+      "altText": "A bamboo scoop holding bright green matcha powder.",
+      "licence": "CC-BY-SA-4.0",
+      "attribution": "Evanhoever",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Matcha_Scoop.jpg"
+    }
+  ],
+  "externalIds": [{ "scheme": "wikidata", "value": "Q822331" }]
+}

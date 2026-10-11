@@ -1,0 +1,27 @@
+# Accepted. The reviewer rewrote the drafted description, which counts as a human edit
+# (it differs from _upstream/Q701075.json), then accepted the drafted category and cleared
+# `drafted`. A later Run keeps this description and still refreshes the Image url.
+review: accepted
+slug: okonomiyaki
+name: Okonomiyaki
+category: grilled-dish
+drafted: []
+description: >-
+  A savoury pancake of batter and shredded cabbage cooked on a griddle with pork belly,
+  seafood or cheese, brushed with a sweet-sour sauce and mayonnaise and topped with
+  bonito flakes and aonori.
+countries:
+  - { code: JP, role: origin, primary: true }
+names:
+  - { value: お好み焼き, kind: native, lang: ja }
+  # No romanisation: "okonomiyaki" is the Name, and an Alias never restates it.
+tags: [grilled, street-food]
+images:
+  - commonsPageId: 117790028
+    url: https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Okonomiyaki_001.jpg/960px-Okonomiyaki_001.jpg
+    altText: An okonomiyaki on a griddle, glazed with sauce and striped with mayonnaise.
+    licence: CC-BY-2.0
+    attribution: ume-y
+    sourcePage: https://commons.wikimedia.org/wiki/File:Okonomiyaki_001.jpg
+externalIds:
+  - { scheme: wikidata, value: Q701075 }

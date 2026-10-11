@@ -102,8 +102,24 @@ An identifier another project uses for the same thing an Item describes — Wiki
 _Avoid_: Provenance, source, foreign key, reference
 
 **Import**:
-One run that draws candidate Items from outside the encyclopedia — a structured source, a drafting model — and turns them into something a human reviews before it is loaded. Re-running an Import must not overwrite what a human has since edited.
+A named, re-runnable scope for drawing candidate Items from outside the encyclopedia — "japan" — together with how to draw them: a structured source, a drafting model. It owns exactly one Batch. Re-running an Import must not overwrite what a human has since edited.
 _Avoid_: Ingestion, sync, scrape, crawl
+
+**Run**:
+One execution of an Import. A Run rewrites its Import's Batch in place, bringing in what the sources now say while keeping every human edit.
+_Avoid_: Job, sync, refresh
+
+**Batch**:
+The checked-in files an Import owns, one per candidate Item. A Batch is not a staging area in front of the catalogue. Together with the seed, Batches *are* the catalogue, and the database is rebuilt from them.
+_Avoid_: Batch file (there is more than one), draft, staging
+
+**Drafted**:
+A value written by a drafting model rather than taken from a structured source or set by a human. It stays drafted until the reviewer accepts it, and an Origin that is only drafted is never accepted without corroboration.
+_Avoid_: Generated, suggested, AI-written
+
+**Review state**:
+Whether a candidate Item in a Batch has been accepted by the reviewer. Only an accepted Item is loaded. A candidate turned down goes on the Rejection list instead.
+_Avoid_: Status, approval, published
 
 **Rejection list**:
 The External ids a human has decided are not Items. Each one is either a candidate turned down in review or an Item that was later deleted, and each carries a reason. No Import proposes an id that is on it.

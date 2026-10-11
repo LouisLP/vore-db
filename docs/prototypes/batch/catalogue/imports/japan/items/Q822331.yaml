@@ -1,0 +1,29 @@
+# Accepted, with a human edit to a collection. Wikidata P495 says matcha originated in
+# China, and that row stays. The reviewer added Japan as the primary Origin. That is a
+# human-added element (absent from _upstream/Q822331.json), so every later Run keeps it.
+# Moving `primary` off the CN row is a human edit to that element and is kept as well.
+# Wikidata dropping CN would still remove the CN row, because its existence is source-owned.
+review: accepted
+slug: matcha
+name: Matcha
+category: infusion
+drafted: []
+description: >-
+  Green tea leaves shade-grown, steamed, dried and stone-ground to a fine powder, then
+  whisked into hot water rather than steeped, so the whole leaf is drunk.
+countries:
+  - { code: CN, role: origin }
+  - { code: JP, role: origin, primary: true }
+names:
+  - { value: 抹茶, kind: native, lang: ja }
+tags: [caffeinated]
+images:
+  - commonsPageId: 75618459
+    url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Matcha_Scoop.jpg/960px-Matcha_Scoop.jpg
+    altText: A bamboo scoop holding bright green matcha powder.
+    licence: CC-BY-SA-4.0
+    # The Commons Artist field links a user page. The Run strips the markup.
+    attribution: Evanhoever
+    sourcePage: https://commons.wikimedia.org/wiki/File:Matcha_Scoop.jpg
+externalIds:
+  - { scheme: wikidata, value: Q822331 }

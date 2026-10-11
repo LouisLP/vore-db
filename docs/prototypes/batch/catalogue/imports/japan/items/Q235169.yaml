@@ -1,0 +1,24 @@
+# Pending: exactly as the Run wrote it, untouched by a human. `db:rebuild` skips it.
+# `drafted` lists what the drafting model wrote, so review knows what to scrutinise.
+# The Origin is NOT drafted: it comes from Wikidata P495 (Japan), so it is corroborated.
+review: pending
+slug: miso
+name: Miso
+category: fermented-paste
+drafted: [description, category, tags]
+description: >-
+  A thick paste of soybeans fermented with salt and koji, sometimes with rice or barley.
+  The base of miso soup and a seasoning for glazes, dressings and pickles.
+countries:
+  - { code: JP, role: origin, primary: true }
+names:
+  - { value: 味噌, kind: native, lang: ja }
+tags: [fermented, vegan]
+images:
+  - commonsPageId: 118083547
+    url: https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Miso_001.jpg/960px-Miso_001.jpg
+    altText: A mound of light brown miso paste.
+    licence: CC0-1.0
+    sourcePage: https://commons.wikimedia.org/wiki/File:Miso_001.jpg
+externalIds:
+  - { scheme: wikidata, value: Q235169 }
