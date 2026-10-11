@@ -114,7 +114,7 @@ The checked-in files an Import owns, one per candidate Item. A Batch is not a st
 _Avoid_: Batch file (there is more than one), draft, staging
 
 **Drafted**:
-A value written by a drafting model rather than taken from a structured source or set by a human. It stays drafted until the reviewer accepts it, and an Origin that is only drafted is never accepted without corroboration.
+A value written by a drafting model rather than taken from a structured source or set by a human — a whole field like a description, or one element of a collection like a romanisation Alias. Accepting the Item accepts its drafted values, which stay recorded as drafted. The drafting model never writes a Country, and an Origin that is only drafted is never accepted without corroboration.
 _Avoid_: Generated, suggested, AI-written
 
 **Review state**:
