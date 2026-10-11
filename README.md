@@ -94,3 +94,10 @@ cd backend && node scripts/generate-countries.mjs
 `CONTEXT.md` holds the glossary — what an Item, a Category, an Origin and an Alias mean
 here. `docs/adr/` holds the decisions and, more usefully, the options each one rejected.
 Every table in `schema.ts` cites the ADR that shaped it.
+
+## Licence
+
+Code is MIT — see `LICENSE`. Catalogue content is CC0 1.0 — see `LICENSE-DATA` — wherever
+it appears: seed files, Import batch files, database exports, the API. Images are
+references to files hosted elsewhere and carry their own licences, recorded per Image.
+ADR-0007 has the scope and what it means for Import sources.
