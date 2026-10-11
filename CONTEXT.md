@@ -97,6 +97,14 @@ _Avoid_: License, rights, terms, copyright
 The page an Image was taken from — a Wikimedia Commons file page, say — as opposed to the address of the file itself. It is where the Licence and Attribution can be re-verified, and what a credit links to.
 _Avoid_: Origin, provenance, referrer
 
+**External id**:
+An identifier another project uses for the same thing an Item describes — Wikidata's `Q1052` for sushi. It records where an Item's facts were drawn from and lets a later Import recognise the Item again. Never the Item's identity and never its public handle; that is the Slug.
+_Avoid_: Provenance, source, foreign key, reference
+
+**Import**:
+One run that draws candidate Items from outside the encyclopedia — a structured source, a drafting model — and turns them into something a human reviews before it is loaded. Re-running an Import must not overwrite what a human has since edited.
+_Avoid_: Ingestion, sync, scrape, crawl
+
 ## Deliberately absent
 
 **Cuisine** and **culinary region** are not modelled. "Cantonese" is expressed as China; "Levantine" as Lebanon, Syria and Jordan together. If a culinary axis is ever needed it will be a new concept, not a widening of Country.
