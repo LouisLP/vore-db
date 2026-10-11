@@ -105,6 +105,10 @@ _Avoid_: Provenance, source, foreign key, reference
 One run that draws candidate Items from outside the encyclopedia — a structured source, a drafting model — and turns them into something a human reviews before it is loaded. Re-running an Import must not overwrite what a human has since edited.
 _Avoid_: Ingestion, sync, scrape, crawl
 
+**Rejection list**:
+The External ids a human has decided are not Items. Each one is either a candidate turned down in review or an Item that was later deleted, and each carries a reason. No Import proposes an id that is on it.
+_Avoid_: Blocklist, tombstone, ignore list
+
 ## Deliberately absent
 
 **Cuisine** and **culinary region** are not modelled. "Cantonese" is expressed as China; "Levantine" as Lebanon, Syria and Jordan together. If a culinary axis is ever needed it will be a new concept, not a widening of Country.
