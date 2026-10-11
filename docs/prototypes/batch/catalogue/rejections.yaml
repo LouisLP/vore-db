@@ -1,0 +1,5 @@
+# Global: no Import proposes an External id listed here (ADR-0008). Adding an entry is the
+# whole act of rejecting; the next Run deletes the matching Item file from its Batch.
+- scheme: wikidata
+  value: Q234138
+  reason: Japanese cuisine. A cuisine, not an Item (CONTEXT.md, "Deliberately absent").
